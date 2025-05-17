@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Upload Image</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Upload an Image</h1>
     <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="image" required>
-        <button type="submit">Upload</button>
+      {% csrf_token %}
+      <input type="file" name="image" required />
+      <button type="submit">Upload</button>
     </form>
 
     {% if uploaded %}
         <p>Uploaded Successfully!</p>
-        <img src="{{ uploaded.image.url }}" style="max-width: 300px;">
+        <img src="{{ uploaded.image.url }}" style="max-width: 300px" />
+    {% endif %} {% if extracted_text %}
+        <h3>Extracted Text:</h3>
+        <pre>{{ extracted_text }}</pre>
+    <!-- {% endif %} {% if extracted_text %}
+        <h3>Extracted Text:</h3>
+        <pre>{{ extracted_text }}</pre> -->
+
+    <a
+      href="{% url 'download_pdf' %}?text={{ extracted_text|urlencode }}"
+      target="_blank"
+    >
+      Download as PDF
+    </a>
     {% endif %}
-</body>
+  </body>
 </html>

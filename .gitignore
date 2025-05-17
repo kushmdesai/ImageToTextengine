@@ -1,4 +1,4 @@
-*.pytest
+*.pytest_cache
 *.venv
 *.cpython-312.pyc
 *.jpg

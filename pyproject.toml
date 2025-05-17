@@ -11,6 +11,8 @@ django = "^5.2.1"
 django-types = "^0.20.0"
 django-stubs-ext = "^5.2.0"
 pillow = "^11.2.1"
+pytesseract = "^0.3.13"
+reportlab = "^4.4.1"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name='homepage'),
     path('upload/', views.upload_image, name='upload_image'),  # new view for uploading
+    path('download_pdf/', views.download_pdf, name='download_pdf'),
 ]
 
 # serve media files in development
