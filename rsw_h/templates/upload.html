@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if uploaded %}
+        <p>Uploaded Successfully!</p>
+        <img src="{{ uploaded.image.url }}" style="max-width: 300px;">
+    {% endif %}
+</body>
+</html>
