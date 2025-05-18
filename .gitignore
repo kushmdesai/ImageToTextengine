@@ -5,3 +5,4 @@
 *.png
 *.jpeg
 *.cpython-312-pytest-8.3.5.pyc
+*.lock
